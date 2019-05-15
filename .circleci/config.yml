@@ -24,7 +24,7 @@ jobs:
           command: wget http://mirror.cs.umn.edu/blender.org/release/Blender2.77/blender-2.77-linux-glibc211-x86_64.tar.bz2 && tar jxf blender-2.77-linux-glibc211-x86_64.tar.bz2
       - run:
           name: Copy add-on to Blender add-on's directory
-          command: cp -r src/blender_mqo blender-2.77-linux-glibc211-x86_64/2.77/scripts/addons
+          command: cp -r src/magic_uv blender-2.77-linux-glibc211-x86_64/2.77/scripts/addons
       - run:
           name: Check pylint
           command: bash tests/lint/pylint.sh src/magic_uv
