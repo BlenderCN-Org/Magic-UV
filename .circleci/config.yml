@@ -4,7 +4,6 @@ jobs:
     docker:
       - image: ubuntu:16.04
     environment:
-      DEBIAN_FRONTEND: noninteractive
       MUV_CONSOLE_MODE: True
     branches:
       only:
@@ -13,6 +12,9 @@ jobs:
         - ci_testing
     steps:
       - checkout
+      - run:
+          name: Check environment
+          command: python -c "import os; print(os.environ)"
       - run:
           name: Get required packages for Blender
           command: apt-get update -qq && apt-get install -y blender wget python3 python3-pip zip
